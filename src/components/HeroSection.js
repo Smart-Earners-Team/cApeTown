@@ -33,7 +33,7 @@ const HeroStyles = styled.div`
   .hero__img {
     max-width: 1000px;
     width: 100%;
-    height: 562px;
+    height: auto;
     margin: 0 auto;
     border: 2px solid var(--gray-1);
   }
@@ -107,21 +107,25 @@ const HeroStyles = styled.div`
       .hero__name {
         font-size: 3rem;
       }
+      .intro {
+        display: none;
+      }
     }
     .hero__img {
-      height: 304px;
-      width: 537px;
+      height: auto;
+      width: 100%;
+      border: none;
     }
     video {
-      height: 300px;
-      width: 533px;
+      height: auto;
+      width: 100%;
     }
     .hero__info {
       margin-top: 3rem;
     }
     .hero__social {
       left: 0px;
-      bottom: -15%;
+      top: 70%;
       width: 20px;
       .hero__social__indicator {
         width: 20px;
@@ -160,8 +164,8 @@ export default function HeroSection() {
       <div className="hero">
         <div className="container">
           <h1 className="hero__heading">
-            <span>You're About to Enter</span>
-            <span className="hero__name">Civilized Apes Town</span>
+            <span className="intro">You're About to Enter</span>
+            <span className="hero__name">Civilized Ape Town</span>
           </h1>
           <div className="hero__img">
             <video autoPlay loop muted>
@@ -172,10 +176,10 @@ export default function HeroSection() {
             <PText>
               Deep in the heart of Brocéliande Forest roam a troop of 10,000
               Apes. These are not regular apes, however. These are Civilized
-              Apes, teeming with life, and all that accompanies it. They
+              Ape, teeming with life, and all that accompanies it. They
               symbolize freedom and the possibility of a life truly lived.
             </PText>
-            <Button btnText="Enter" btnLink="/#" />
+            <Button btnText="Enter" btnLink="/og" />
           </div>
           <div className="hero__social">
             <div className="hero__social__indicator">
