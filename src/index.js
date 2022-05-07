@@ -4,7 +4,7 @@ import App from './App';
 import GlobalStyles from './styles/GlobalStyle';
 import Typography from './styles/Typography';
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <>
     <GlobalStyles />
     <Typography />

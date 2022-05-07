@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/static/js/main.ac1fae59.chunk.js",
+    "main.js.map": "/static/js/main.ac1fae59.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fdc66614.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fdc66614.js.map",
+    "static/js/2.5a91a404.chunk.js": "/static/js/2.5a91a404.chunk.js",
+    "static/js/2.5a91a404.chunk.js.map": "/static/js/2.5a91a404.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.5a91a404.chunk.js.LICENSE.txt": "/static/js/2.5a91a404.chunk.js.LICENSE.txt",
+    "static/media/Montserrat-Bold.079ca05d.ttf": "/static/media/Montserrat-Bold.079ca05d.ttf",
+    "static/media/Montserrat-SemiBold.fa8441f3.ttf": "/static/media/Montserrat-SemiBold.fa8441f3.ttf",
+    "static/media/RobotoMono-Regular.418a8f9f.ttf": "/static/media/RobotoMono-Regular.418a8f9f.ttf",
+    "static/media/apeTown.aa915eea.mp4": "/static/media/apeTown.aa915eea.mp4",
+    "static/media/social-media-arrow.f5e093ce.svg": "/static/media/social-media-arrow.f5e093ce.svg",
+    "static/media/success.66753a16.svg": "/static/media/success.66753a16.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fdc66614.js",
+    "static/js/2.5a91a404.chunk.js",
+    "static/js/main.ac1fae59.chunk.js"
+  ]
+}

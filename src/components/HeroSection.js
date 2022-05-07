@@ -107,9 +107,6 @@ const HeroStyles = styled.div`
       .hero__name {
         font-size: 3rem;
       }
-      .intro {
-        display: none;
-      }
     }
     .hero__img {
       height: auto;
@@ -164,7 +161,6 @@ export default function HeroSection() {
       <div className="hero">
         <div className="container">
           <h1 className="hero__heading">
-            <span className="intro">You're About to Enter</span>
             <span className="hero__name">Civilized Ape Town</span>
           </h1>
           <div className="hero__img">
