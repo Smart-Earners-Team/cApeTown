@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import Message from './Error';
+// import axios from 'axios';
+// import Message from './Error';
 
 const FormStyle = styled.form`
   width: 100%;
@@ -13,7 +14,7 @@ const FormStyle = styled.form`
     font-size: 1.8rem;
   }
   input,
-  textarea {
+  .textarea {
     width: 100%;
     font-size: 2rem;
     padding: 1.2rem;
@@ -73,15 +74,14 @@ export default function OGForm() {
     name: '',
     email: '',
     twtLink: '',
-    twtSize: '',
-    twtUser: '',
+    twtSize: '<250',
+    twtUser: 'No',
   });
 
   const { name, email, twtSize, twtLink, twtUser } = data;
 
   const handleChange = (e) =>
     setData({ ...data, [e.target.name]: e.target.value });
-  const [msg, setMsg] = useState('');
 
   const history = useHistory();
 
@@ -90,48 +90,26 @@ export default function OGForm() {
     console.log(data);
 
     try {
-      const response = await fetch(
-        'https://v1.nocodeapi.com/hood/google_sheets/dVKRSbwpiUrGIewS?tabId=Sheet1',
-        {
-          method: 'Post',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify([
-            [
-              name,
-              twtUser,
-              twtSize,
-              twtLink,
-              email,
-              new Date().toLocaleString(),
-            ],
-          ]),
-        }
-      );
+      const response = await fetch('/post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify([
+          [name, twtUser, twtSize, twtLink, email, new Date().toLocaleString()],
+        ]),
+      });
       await response.json();
       history.push('/ogs');
     } catch (err) {
-      setMsg(err);
+      alert(err);
     }
   };
 
-  //   axios
-  //     .post(
-  //       'https://sheet.best/api/sheets/57fe1df4-b64b-4be8-93bb-ac77a0762907',
-  //       data
-  //     )
-  //     .then((res) => {
-  //       console.log(res);
-  //       setMsg(res);
-  //       history.push('/success');
-  //     });
-  // };
   return (
     <>
       <FormStyle onSubmit={handleSubmit}>
         <div className="form-group">
-          {msg && <Message variant="danger">{msg}</Message>}
           <label htmlFor="name">
             What Is Your Name?
             <input
@@ -150,6 +128,7 @@ export default function OGForm() {
             <select
               id="twitter-user"
               name="twtUser"
+              required
               value={twtUser}
               onChange={handleChange}
             >
@@ -164,6 +143,7 @@ export default function OGForm() {
             <select
               id="twitter-size"
               name="twtSize"
+              required
               value={twtSize}
               onChange={handleChange}
             >
